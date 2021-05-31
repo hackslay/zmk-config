@@ -40,8 +40,6 @@
             tapping-term-ms = <200>;
             bindings = <&tog>, <&kp>;
         };
-
-
 	};
 
 	keymap {
@@ -59,7 +57,7 @@
 &slt FUNC TAB   &kp Q  	&kp W  	&kp E    	&kp R    			&kp T                     					&kp Y		&kp U		&kp I   	&kp O   	&kp P    	&kp MINUS
 &kp BSPC 		&kp A  	&kp S 	&kp D    	&kp F    			&kp G                      					&kp H		&kp J		&kp K   	&kp L   	&kp SEMI 	&kp SQT
 &sk LSHFT 		&kp Z  	&kp X  	&kp C    	&kp V    			&kp B		&mt LPAR LBKT	&mt LPAR RBKT	&kp N		&kp M		&kp COMMA 	&kp DOT 	&kp FSLH 	&kp RSHFT
-                    			&sk LCTRL 	&tlsk FUNC LGUI 	&sk LALT  	&kp SPACE  		&kp RET  		&mo 2  		&kp BSPC 	&kp RGUI
+                    			&sk LCTRL 	&sk LGUI 	&sk LALT  	&kp SPACE  		&kp RET  		&none  		&kp BSPC 	&kp RGUI
 			>;
 
 			sensor-bindings = <&inc_dec_kp C_AL_NEXT_TASK C_AL_PREV_TASK>;
