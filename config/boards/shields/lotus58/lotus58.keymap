@@ -23,7 +23,7 @@
 };
 
 &mt {
-	tapping-term-ms = <250>;
+	tapping-term-ms = <200>;
 };
 
 / {
@@ -54,86 +54,79 @@
             bindings = <&tog>, <&kp>;
         };
 
-		number: behavior_toLayer_keypress {
-			compatible = "zmk,behavior-macro";
-			label = "toNUM";
-			#binding-cells = <0>;
-			bindings = <&to NUM>, <&kp KP_NLCK>;
-		};
-		
 	};
 
 	combos {
 		compatible = "zmk,combos";
 
         combo_f1 {
-            timeout-ms = <50>;
+            timeout-ms = <25>;
             key-positions = <0 1>;
             bindings = <&kp F1>;
         };
 
 		combo_f2 {
-            timeout-ms = <50>;
+            timeout-ms = <25>;
             key-positions = <1 2>;
             bindings = <&kp F2>;
         };
 
 		combo_f3 {
-            timeout-ms = <50>;
+            timeout-ms = <25>;
             key-positions = <2 3>;
             bindings = <&kp F3>;
         };
 
 		combo_f4 {
-            timeout-ms = <50>;
+            timeout-ms = <25>;
             key-positions = <3 4>;
             bindings = <&kp F4>;
         };
 
 		combo_f5 {
-            timeout-ms = <50>;
+            timeout-ms = <25>;
             key-positions = <4 5>;
             bindings = <&kp F5>;
         };
 
 		combo_f6 {
-            timeout-ms = <50>;
+            timeout-ms = <25>;
             key-positions = <7 8>;
             bindings = <&kp F6>;
         };
 
 		combo_f7 {
-            timeout-ms = <50>;
+            timeout-ms = <25>;
             key-positions = <8 9>;
             bindings = <&kp F7>;
         };
 
 		combo_f8 {
-            timeout-ms = <50>;
+            timeout-ms = <25>;
             key-positions = <9 10>;
             bindings = <&kp F8>;
         };
 
 		combo_f9 {
-            timeout-ms = <50>;
+            timeout-ms = <25>;
             key-positions = <10 11>;
             bindings = <&kp F9>;
         };
 
 		combo_f10 {
-            timeout-ms = <50>;
+            timeout-ms = <25>;
             key-positions = <11 12>;
             bindings = <&kp F10>;
         };
 
 		combo_f11 {
-            timeout-ms = <50>;
+            timeout-ms = <25>;
             key-positions = <0 2>;
             bindings = <&kp F11>;
         };
 
 		combo_f12 {
-            timeout-ms = <50>;
+            timeout-ms = <25>;
             key-positions = <0 3>;
             bindings = <&kp F12>;
         };
@@ -145,14 +138,14 @@
         };
         
         combo_bspc {
-            timeout-ms = <50>;
-            key-positions = <13 14>;
+            timeout-ms = <25>;
+            key-positions = <16 17>;
             bindings = <&kp BSPC>;
         };
 
         combo_del {
-            timeout-ms = <50>;
-            key-positions = <13 14 15>;
+            timeout-ms = <25>;
+            key-positions = <15 16 17>;
             bindings = <&kp DEL>;
         };
 	};
@@ -164,7 +157,7 @@
 // ------------------------------------------------------------------------------------------------------------
 // | ESC   |  1  |  2  |  3  |  4  |  5  |  SS  |         |  6   |  7  |  8  |  9   |   0   |      |
 // | TAB   |  Q  |  W  |  E  |  R  |  T  |                |  Y   |  U  |  I  |  O   |   P   | GAME |
-// | SHIFT |  A  |  S  |  D  |  F  |  G  |                |  H   |  J  |  K  |  L   |   ;   | INS  |
+// | SHIFT |  A  |  S  |  D  |  F  |  G  |                |  H   |  J  |  K  |  L   |   ;   |      |
 // | CTRL  |  Z  |  X  |  C  |  V  |  B  | "()" |  | "[]" |  N   |  M  |  ,  |  .   |   /   | NUM  |
 //                     | GUI | FN  | ALT | SPC  |  | "-=" | BLSH |  '  |     |
 			bindings = <
@@ -180,17 +173,17 @@
 
 		func_layer {
 // ------------------------------------------------------------------------------------------------------------
-// |  `    |  F1  |  F2  |   F3    |  F4  |  F5  |  SS   |            |  F6  |  F7  |  F8  |  F9   |  F10  |       |
-// |       |      |  UP  |         |      |      |                    |      |      |      |       |       |       |
-// | SHIFT | LEFT | DOWN |  RIGHT  |      |      |                    |      |      |      |       |       |       |
-// | CTRL  |      |      |         |      |      |  DEL  |    |       |      |      |      |       |       |       |
-//                       |         | RET  | ALT  | SPACE |    |       |      |      |      |
+// |  `    |      |      |       |    |     |  SS   |            |    |      |     |    |    | DEFAULT |
+// |       |      |  UP  |       |    |     |                    |    | PAUSE| INS |    |    | GAME    |
+// | SHIFT | LEFT | DOWN | RIGHT |    |     |                    |    | HOME | END |    |    |         |
+// | CTRL  |      |      |       |    |     |       |    |       |    |      |     |    |    | NUM     |
+//                       |       |    | ALT | SPACE |    |       |    |      |     |
 			bindings = <
-&kp GRAVE   &none		&none		&none			&none		&none		&trans				 &none     &none     &none     &none     &none      &to DEFAULT
-&kp TAB	    &none		&kp UP		&none			&none		&none							 &none     &none   	 &none	   &none	 &none	    &to GAME
-&kp LSHFT	&kp LEFT	&kp DOWN	&kp RIGHT		&none		&none							 &none	   &none     &none	   &none	 &none	    &none
-&kp LCTRL   &none	    &none		&none    		&none    	&none    	&none		&none    &none     &none   	 &none     &none     &none	    &to NUM
-                                    &none        	&none	    &kp LALT    &kp SPACE	&none	 &none	   &none	 &none
+&kp GRAVE   &none	&none		&none		&none       &none		&trans				 &none     &none            &none       &none   &none   &to DEFAULT
+&kp TAB	    &none   &none		&kp UP		&none	    &none							 &none     &kp PAUSE_BREAK  &kp INS	    &none   &none	&to GAME
+&kp LSHFT	&none   &kp LEFT	&kp DOWN	&kp RIGHT   &none							 &none	   &kp HOME         &kp END	    &none	&none	&none
+&kp LCTRL   &none	&none		&none       &none       &none    	&none		&none    &none     &none   	        &none       &none   &none	&to NUM
+                                &none       &none	    &kp LALT    &kp SPACE	&none	 &none	   &none	        &none
 			>;
 
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -199,16 +192,16 @@
 		game_layer {
 // ------------------------------------------------------------------------------------------------------------
 // | ESC   |  1  |  2  |  3  |  4  |  5  |       |         |    |    |    |    |    | DEFAULT |
-// | TAB   |  Q  |  W  |  E  |  R  |  T  |                 |    |    |    |    |    |         |
-// | SHIFT |  A  |  S  |  D  |  F  |  G  |                 |    |    |    |    |    |         |
-// | CTRL  |  Z  |  X  |  C  |  V  |  B  |   N   |    |    |    |    |    |    |    |   NUM   |
-//                 	   |  M  |  JI | ALT | SPACE |    |    |    |    |    |
+// | TAB   |  T  |  Q  |  W  |  E  |  R  |                 |    |    |    |    |    |         |
+// | SHIFT |  G  |  A  |  S  |  D  |  F  |                 |    |    |    |    |    |         |
+// | CTRL  |  B  |  Z  |  X  |  C  |  B  |   Y   |    |    |    |    |    |    |    |   NUM   |
+//                 	   |  NM |  JI | ALT | SPACE |    |    |    |    |    |
 			bindings = <
-&kp ESC		&kp N1	&kp N2	&kp N3   &kp N4     &kp N5   	&none        	    &none    &none    &none    &none    &none    &to DEFAULT
-&kp TAB		&kp Q   &kp W 	&kp E    &kp R      &kp T                 	        &none    &none    &none    &none    &none    &none
-&kp LSHFT	&kp A	&kp S  	&kp D    &kp F      &kp G                 	        &none    &none    &none    &none    &none    &none
-&kp LCTRL 	&kp Z	&kp X  	&kp C    &kp V      &kp B    	&kp N   	&none   &none    &none    &none    &none    &none    &to NUM
-                    		&kp M    &mt J I    &kp LALT    &kp SPACE	&none   &none    &none    &none
+&kp ESC		&kp N1	&kp N2	&kp N3      &kp N4     &kp N5   	&none        	    &none    &none    &none    &none    &none    &to DEFAULT
+&kp TAB		&kp T   &kp Q 	&kp W       &kp E      &kp R                 	        &none    &none    &none    &none    &none    &none
+&kp LSHFT	&kp G	&kp A  	&kp S       &kp D      &kp F                 	        &none    &none    &none    &none    &none    &none
+&kp LCTRL 	&kp B	&kp Z  	&kp X       &kp C      &kp V    	&kp Y   	&none   &none    &none    &none    &none    &none    &to NUM
+                    		&mt N M     &mt J I    &kp LALT     &kp SPACE	&none   &none    &none    &none
 			>;
 
 			sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
