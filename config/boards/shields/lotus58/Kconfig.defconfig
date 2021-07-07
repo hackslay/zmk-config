@@ -1,11 +1,11 @@
 
 if SHIELD_LOTUS58_LEFT
 
-config ZMK_KEYBOARD_NAME
-	default "Lotus58_Left"
-
 config ZMK_SPLIT_BLE_ROLE_CENTRAL
 	default y
+	
+config ZMK_KEYBOARD_NAME
+	default "Lotus58_Left"
 	
 endif
 
